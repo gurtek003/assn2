@@ -1,0 +1,11 @@
+<h1>Product Line Results</h1>
+{{#if storeSales_info}}
+    <table border="1">
+        <tr><th>InvoiceID</th><th>productLine</th><th>unitPrice</th><th>Branch</th><th>City</th><th>customerType</th></tr>
+        {{#each storeSales_info}}
+            <tr><td>{{InvoiceID}}</td><td>{{productLine}}</td><td>{{unitPrice}}</td><td>{{Branch}}</td><td>{{City}}</td><td>{{customerType}}</td></tr>
+        {{/each}}
+    </table>
+{{else}}
+    <p>Error: No sales records found for this product line.</p>
+{{/if}}

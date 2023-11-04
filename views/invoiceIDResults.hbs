@@ -1,0 +1,10 @@
+<h1>Invoice ID Results</h1>
+{{#if storeSales_info}}
+    <table border="1">
+        {{#each storeSales_info}}
+            <tr><td>{{@key}}</td><td>{{this}}</td></tr>
+        {{/each}}
+    </table>
+{{else}}
+    <p>Error: Invoice ID not found.</p>
+{{/if}}

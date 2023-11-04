@@ -1,0 +1,58 @@
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tr:hover {
+    background-color: #ddd;
+  }
+  .highlight {
+    background-color: yellow;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      {{#each headers}}
+        <th>{{this}}</th>
+      {{/each}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each storeSales}}
+      <tr class="{{#if (eq this.customerType '')}}highlight{{/if}}">
+        <td>{{this.InvoiceID}}</td>
+        <td>{{this.Branch}}</td>
+        <td>{{this.City}}</td>
+        <td>{{checkBlank this.customerType}}</td>
+        <td>{{this.productLine}}</td>
+        <td>{{this.unitPrice}}</td>
+        <td>{{this.Quantity}}</td>
+        <td>{{this.[Tax 5%]}}</td>
+        <td>{{this.Total}}</td>
+        <td>{{this.Date}}</td>
+        <td>{{this.Time}}</td>
+        <td>{{this.Payment}}</td>
+        <td>{{this.cogs}}</td>
+        <td>{{this.gross_margin_percentage}}</td>
+        <td>{{this.[gross income]}}</td>
+        <td>{{this.Rating}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
